@@ -26,11 +26,14 @@
         },
         getList () {
           this.loading = true
-          this.$http.get(config.apiHost + 'address/regions').then(response => {
+          this.$http.get(config.localHost + 'user/zhougang123').then(response => {
             let data = response.data
-            console.log(data)
-            this.name = 'wenjuan'
-            console.log(this.$store.state.user.appName)
+            if (data.code === 0) {
+              this.$message('请求成功')
+              this.name = data.content.name
+            } else {
+              this.$message.error('请求错误')
+            }
           })
           this.loading = false
         }
