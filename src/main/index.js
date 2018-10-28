@@ -1,4 +1,4 @@
-'use strict'
+//'use strict'
 
 import { app, BrowserWindow } from 'electron'
 
@@ -20,9 +20,9 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 600,
     useContentSize: true,
-    width: 1000
+    width: 410
   })
 
   mainWindow.loadURL(winURL)
